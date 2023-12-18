@@ -10,7 +10,21 @@ public class Mapper {
         // Ejemplo ficticio:
         // return new OutputDTO(inputDTO.getName(), inputDTO.getAge(), inputDTO.getOccupation());
 
-        OutputDTO retorno = new OutputDTO()
+        //Validamos que no es nulo el input.
+        //Validamos que los campos de entrada no están vacios y la edad es positiva.
+
+        if(inputDTO != null) {
+            if (!inputDTO.getName().isEmpty()
+                && inputDTO.getAge()>0
+                    && !inputDTO.getOccupation().isEmpty()
+                        ) {
+
+                return new OutputDTO(inputDTO.getName(), inputDTO.getAge(), inputDTO.getOccupation()) ;
+
+            }
+        }
+
+
         return null; // Reemplazar con la lógica adecuada
     }
 }
